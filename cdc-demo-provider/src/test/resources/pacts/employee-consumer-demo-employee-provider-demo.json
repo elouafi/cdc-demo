@@ -1,0 +1,56 @@
+{
+  "provider": {
+    "name": "employee-provider-demo"
+  },
+  "consumer": {
+    "name": "employee-consumer-demo"
+  },
+  "interactions": [
+    {
+      "description": "ConsumerDemo Test interaction",
+      "request": {
+        "method": "GET",
+        "path": "/employees"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "firstName": "Unit",
+            "lastName": "Testing",
+            "employeeNumber": 12
+          }
+        ]
+      }
+    },
+    {
+      "description": "Employee add interaction",
+      "request": {
+        "method": "POST",
+        "path": "/employees/add",
+        "body": {
+          "firstName": "Integration",
+          "lastName": "Testing",
+          "employeeNumber": 1
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.8"
+    }
+  }
+}
